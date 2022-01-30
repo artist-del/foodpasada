@@ -1,0 +1,88 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+@{
+    Layout = null;
+}
+
+<!--
+    Author: W3layouts
+    Author URL: http://w3layouts.com
+    License: Creative Commons Attribution 3.0 Unported
+    License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Riders</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Trendy Mobile Screens Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+    <script type="application/x-javascript">
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Meta tag Keywords -->
+    <!-- css files -->
+    <link href="~/Riders/css/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="~/Riders/css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+    <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Ropa+Sans:400,400i&amp;subset=latin-ext" rel="stylesheet">
+    <link href="~/Content/rider.css" rel="stylesheet" />
+    
+    <!--//online-fonts -->
+</head>
+<body>
+    <div class="header">
+      
+    </div>
+    <div class="w3-main box3">
+        <!-- Main -->
+        <div class="about-bottom main-agile book-form box2">
+            <div class="header-top">
+                <ul>
+                    <li><span></span></li>
+                    <li><span class="chrg"></span> </li>
+                    <li>@ViewBag.time </li>
+                </ul>
+            </div>
+            <div class="form-w3l box">
+                <img src="~/Riders/images/food_riders.jpg" alt="image">
+               @if (Session["name"] != null)
+               {
+                <h4 class="tittle">@Session["name"]</h4>
+               }
+               <br />
+                <br />
+                <form action="Update" method="post">
+                    <div class="form-date-w3-agileits">
+                       
+                    </div>
+                    <div class="make wow shake">
+
+                            <input type="checkbox" value="OnDelivered" name="IsActive" />OnDelivered<br />
+                            <input type="checkbox" value="Active" name="IsActive" />Active
+                        <br />
+                
+                            <button id="btn11" type="submit">@Session["status"]</button>
+                            <br />
+                        <button id="btn11" type="button"><a href="@Url.Action("Message", "Riders")">Message</a></button><br />
+                        
+                        <a href="@Url.Action("Logout","Riders")">Logout</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+ 
+    <!-- //Main -->
+    <!-- footer -->
+    <!-- //footer -->
+</body>
+</html>

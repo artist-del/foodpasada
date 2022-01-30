@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Food_Pasada.Models.res_admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+ <!--market updates updates-->
+<div class="market-updates">
+    <div class="col-md-4 market-update-gd">
+        <div class="market-update-block clr-block-1">
+            <div class="col-md-8 market-update-left">
+                <h3>@ViewBag.count</h3>
+                <h4>Registered User</h4>
+                <p>Restaurant Admin</p>
+            </div>
+            <div class="col-md-4 market-update-right">
+                <i class="fa fa-file-text-o"> </i>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="col-md-4 market-update-gd">
+        <div class="market-update-block clr-block-2">
+            <div class="col-md-8 market-update-left">
+                <h3>@ViewBag.riderCount</h3>
+                <h4>Number of Riders</h4>
+                <p>Food Pasada Riders</p>
+            </div>
+            <div class="col-md-4 market-update-right">
+                <i class="fa fa-eye"> </i>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+  
+    <div class="clearfix"> </div>
+</div>
+<!--market updates end here-->
+<!--mainpage chit-chating-->
+<div class="chit-chat-layer1">
+    <div class="col-md-6 chit-chat-layer1-left">
+        <div class="work-progres">
+            <div class="chit-chat-heading">
+                <b>Recent Owners</b>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            
+                            <th>Name</th>
+                            <th>Restaurant Name</th>
+
+                            <th>Position</th>
+                            <th>Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model)
+                        {
+                            <tr>
+                                <td>@item.f_name</td>
+                                <td>@item.rest_name</td>
+                                <td>Owner</td>
+                                <td>@item.address</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 chit-chat-layer1-rit">
+        <div class="geo-chart">
+            <section id="charts1" class="charts">
+                <div class="wrapper-flex">
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+
+                                <th>Rider Name</th>
+                                <th>Status</th>
+
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in ViewBag.rider)
+                            {
+                                <tr>
+                                    <td>@item.full_name</td>
+                                    <td><strong>@item.IsActive</strong></td>
+                                    
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                   
+
+
+                </div><!-- .wrapper-flex -->
+            </section>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+

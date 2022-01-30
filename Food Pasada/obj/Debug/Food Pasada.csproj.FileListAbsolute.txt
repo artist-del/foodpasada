@@ -1,0 +1,57 @@
+C:\web sample\Food Pasada\Food Pasada\bin\ApplicationInsights.config
+C:\web sample\Food Pasada\Food Pasada\bin\roslyn\csc.exe
+C:\web sample\Food Pasada\Food Pasada\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\web sample\Food Pasada\Food Pasada\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\web sample\Food Pasada\Food Pasada\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\web sample\Food Pasada\Food Pasada\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\web sample\Food Pasada\Food Pasada\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\web sample\Food Pasada\Food Pasada\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\web sample\Food Pasada\Food Pasada\bin\roslyn\System.Collections.Immutable.dll
+C:\web sample\Food Pasada\Food Pasada\bin\roslyn\System.Reflection.Metadata.dll
+C:\web sample\Food Pasada\Food Pasada\bin\roslyn\vbc.exe
+C:\web sample\Food Pasada\Food Pasada\bin\roslyn\VBCSCompiler.exe
+C:\web sample\Food Pasada\Food Pasada\bin\roslyn\VBCSCompiler.exe.config
+C:\web sample\Food Pasada\Food Pasada\bin\Food Pasada.dll.config
+C:\web sample\Food Pasada\Food Pasada\bin\Food Pasada.dll
+C:\web sample\Food Pasada\Food Pasada\bin\Food Pasada.pdb
+C:\web sample\Food Pasada\Food Pasada\bin\Antlr3.Runtime.dll
+C:\web sample\Food Pasada\Food Pasada\bin\Microsoft.AI.Agent.Intercept.dll
+C:\web sample\Food Pasada\Food Pasada\bin\Microsoft.AI.DependencyCollector.dll
+C:\web sample\Food Pasada\Food Pasada\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\web sample\Food Pasada\Food Pasada\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\web sample\Food Pasada\Food Pasada\bin\Microsoft.AI.Web.dll
+C:\web sample\Food Pasada\Food Pasada\bin\Microsoft.AI.WindowsServer.dll
+C:\web sample\Food Pasada\Food Pasada\bin\Microsoft.ApplicationInsights.dll
+C:\web sample\Food Pasada\Food Pasada\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\web sample\Food Pasada\Food Pasada\bin\Microsoft.Web.Infrastructure.dll
+C:\web sample\Food Pasada\Food Pasada\bin\Newtonsoft.Json.dll
+C:\web sample\Food Pasada\Food Pasada\bin\System.Web.Helpers.dll
+C:\web sample\Food Pasada\Food Pasada\bin\System.Web.Mvc.dll
+C:\web sample\Food Pasada\Food Pasada\bin\System.Web.Optimization.dll
+C:\web sample\Food Pasada\Food Pasada\bin\System.Web.Razor.dll
+C:\web sample\Food Pasada\Food Pasada\bin\System.Web.WebPages.Deployment.dll
+C:\web sample\Food Pasada\Food Pasada\bin\System.Web.WebPages.dll
+C:\web sample\Food Pasada\Food Pasada\bin\System.Web.WebPages.Razor.dll
+C:\web sample\Food Pasada\Food Pasada\bin\WebGrease.dll
+C:\web sample\Food Pasada\Food Pasada\bin\Microsoft.AI.DependencyCollector.xml
+C:\web sample\Food Pasada\Food Pasada\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\web sample\Food Pasada\Food Pasada\bin\Microsoft.AI.Web.xml
+C:\web sample\Food Pasada\Food Pasada\bin\Microsoft.AI.WindowsServer.xml
+C:\web sample\Food Pasada\Food Pasada\bin\Microsoft.ApplicationInsights.xml
+C:\web sample\Food Pasada\Food Pasada\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\web sample\Food Pasada\Food Pasada\bin\System.Web.Helpers.xml
+C:\web sample\Food Pasada\Food Pasada\bin\System.Web.Mvc.xml
+C:\web sample\Food Pasada\Food Pasada\bin\System.Web.Optimization.xml
+C:\web sample\Food Pasada\Food Pasada\bin\System.Web.Razor.xml
+C:\web sample\Food Pasada\Food Pasada\bin\System.Web.WebPages.xml
+C:\web sample\Food Pasada\Food Pasada\bin\System.Web.WebPages.Deployment.xml
+C:\web sample\Food Pasada\Food Pasada\bin\System.Web.WebPages.Razor.xml
+C:\web sample\Food Pasada\Food Pasada\bin\Antlr3.Runtime.pdb
+C:\web sample\Food Pasada\Food Pasada\bin\Newtonsoft.Json.xml
+C:\web sample\Food Pasada\Food Pasada\obj\Debug\Food Pasada.csprojResolveAssemblyReference.cache
+C:\web sample\Food Pasada\Food Pasada\obj\Debug\Food Pasada.dll
+C:\web sample\Food Pasada\Food Pasada\obj\Debug\Food Pasada.pdb
+C:\web sample\Food Pasada\Food Pasada\bin\EntityFramework.dll
+C:\web sample\Food Pasada\Food Pasada\bin\EntityFramework.SqlServer.dll
+C:\web sample\Food Pasada\Food Pasada\bin\EntityFramework.xml
+C:\web sample\Food Pasada\Food Pasada\bin\EntityFramework.SqlServer.xml

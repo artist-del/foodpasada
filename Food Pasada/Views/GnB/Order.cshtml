@@ -1,0 +1,203 @@
+﻿@model IEnumerable<Food_Pasada.Models.gnb_order>
+@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/_GnBLayout.cshtml";
+}
+
+
+<style>
+    table thead tr th {
+        background-color: #aefc70;
+    }
+
+    .modal-header {
+        background-color: #aefc70;
+    }
+
+    .modal-footer {
+        background-color:#aefc70;
+    }
+
+    .modal-header h3 {
+        color: #000000;
+    }
+
+    .btn {
+        background-color: #aefc70;
+        color: #000000;
+    }
+
+    #btn_del {
+        background-color: #ff0000;
+        color: #ffffff;
+    }
+
+    table tr td {
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 20px;
+    }
+
+    table tr th {
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    h2 {
+        font-family: Stencil;
+        color: #1cc702;
+    }
+</style>
+
+
+<div class="modal fade" id="DelData">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="modal-title center-block"><strong>Delete</strong></h3>
+            </div>
+
+            <div class="modal-body row">
+                <center>
+                    <h2 style="color: #fe261f">Do you want to Delete?</h2>
+                </center>
+
+                <input type="hidden" id="id_del" />
+
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-default" id="btn_del"><span class="glyphicon glyphicon-remove-sign"></span>  Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!----viewData-->
+<div class="modal fade" id="viewData">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="modal-title center-block"><strong>View Orders</strong></h3>
+            </div>
+
+            <div class="modal-body row">
+                <div class="col-md-8">
+                    <h4><b>Customer Name:    </b></h4><h4 id="id_name"></h4><br />
+                    <h4><b>Customer Number:  </b></h4><h4 id="id_number"></h4><br />
+                    <h4><b>Customer Address: </b></h4><h4 id="id_address"></h4><br />
+                    <h4><b>Customer Email:   </b></h4><h4 id="id_email"></h4><br />
+                    <h4><b>Product Order:    </b></h4><h4 id="id_product"></h4><br />
+                    <h4><b>Product Price:    </b></h4><h4 id="id_price"></h4><br />
+                </div>
+                <div class="col-md-4">
+                    <img id="id_img" src="" class="img img-responsive" style="border-radius: 15px;" />
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal"> Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h2>Orders</h2><br />
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>NAME</th>
+                        <th>ADDRESS</th>
+                        <th>NUMBER</th>
+                        <th>EMAIL</th>
+                        <th>PRODUCT ORDER</th>
+                        <th>PRICE</th>
+                        <th>IMAGE</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.f_name</td>
+                            <td>@item.address</td>
+                            <td>@item.number</td>
+                            <td>@item.email</td>
+                            <td>@item.product</td>
+                            <td>@item.price</td>
+                            <td>
+                                <img src="~/AppFile/GnB/@item.image" onclick="GetOrderId(@item.id)" height="70px" width="70px" style="border-radius:50%; box-shadow: 2px 2px 8px cyan, -2px -2px 8px black" />
+                            </td>
+                            <td>
+                                <button class="btn btn-default" onclick="GetDel(@item.id)"><span class="glyphicon glyphicon-remove-circle"></span></button>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/sweetalert2.js"></script>
+<link href="~/Content/sweetalert2.css" rel="stylesheet" />
+<script>
+    function GetDel(id){
+        $('#id_del').val(id);
+        $('#DelData').modal('show');
+    }
+    $('#btn_del').click(function () {
+        var id_data = $('#id_del').val();
+
+        $.ajax({
+            type: "post",
+            url: "/GnB/DeleteOrder",
+            data: { id: id_data },
+            success: function () {
+                Swal.fire("Information", "Successfully Delete", "success").then((value) => {
+                    window.location.href = "/GnB/Order";
+                });
+                
+            }
+        })
+    })
+
+    function GetOrderId(ID) {
+        var url = "/GnB/GetOrders?id=" + ID;
+        $("#viewData").modal('show');
+
+        $.ajax({
+            type: "GET",
+            url: url,
+
+            success: function (response) {
+                var obj = JSON.parse(response);
+
+                $('#id_name').text(obj.f_name);
+                $("#id_number").text(obj.number);
+                $("#id_address").text(obj.address);
+                $("#id_email").text(obj.email);
+                $("#id_product").text(obj.product);
+                $("#id_price").text(obj.price);
+                $("#id_img").attr('src', '@Url.Content("~/AppFile/GnB/")' + obj.image);
+               
+            }
+        })
+    }
+
+
+</script>

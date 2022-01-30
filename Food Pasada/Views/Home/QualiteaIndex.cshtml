@@ -1,0 +1,621 @@
+﻿@model IEnumerable<Food_Pasada.Models.qt_product>
+@{
+    ViewBag.Title = "Food Pasada/QualiteeTime";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Fantastic Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--// Meta tag Keywords -->
+    <!-- css files -->
+    <link rel="stylesheet" href="~/ClientTemp/css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href="~/ClientTemp/css/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
+    <link rel="stylesheet" href="~/ClientTemp/css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+    <link rel='stylesheet' type='text/css' href='~/ClientTemp/css/jquery.easy-gallery.css' /> <!-- For-gallery-CSS -->
+    <!-- //css files -->
+    <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,hebrew,latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <!-- //online-fonts -->
+    <!-- js -->
+    <script type="text/javascript" src="~/ClientTemp/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="~/ClientTemp/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+    <!-- //js -->
+</head>
+<body>
+    <!-- header -->
+    <div class="header">
+        <div class="agile-top-header">
+            <div class="logo">
+                <h1><a href="index.html">Qua<span>li</span>Tea T<span>im</span>e </a></h1>
+            </div>
+            <!-- navigation -->
+            <div class="top-left">
+                <div class="top-icons">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook </a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter </a></li>
+                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i>Google </a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i>Linkedin</a></li>
+                    </ul>
+                </div>
+                <div class="top-nav">
+                    <nav class="navbar navbar-default">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                        </div>
+                        <!-- navbar-header -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <nav class="linkEffects linkHoverEffect_2">
+                                <ul>
+                                    <li><a href="index.html" data-link-alt="Home" class="active"><span>Home</span></a></li>
+                                    <li><a href="#services" data-link-alt="SERVICES" class="scroll"><span>Services</span></a></li>
+                                    <li><a href="#gallery" data-link-alt="GALLERY" class="scroll"><span>Gallery</span></a></li>
+                                    <li><a href="#special" data-link-alt="SPECIAL" class="scroll"><span>Special</span></a></li>
+                                    <li><a href="#clients" data-link-alt="CLIENTS" class="scroll"><span>Clients</span></a></li>
+                                    <li><a href="#contact" data-link-alt="CONTACT US" class="scroll"><span>Contact Us</span></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </nav>
+                </div>
+                <div class="clearfix"> </div>
+                <!-- //navigation -->
+            </div>
+        </div>
+        <div class="slider">
+            <!-- Slideshow 3 -->
+            <ul class="rslides" id="slider">
+                <li>
+                    <img src="~/ResImages/qt/qt bg1.jpg" alt="">
+                    <div class="slider-info">
+                        <h4>Customer Pickup</h4>
+                        <p>There's no place like QualiteaTime.</p>
+                        <div class="button">
+                            <a href="#" data-toggle="modal" data-target="#myModal">Get More<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="~/ResImages/qt/qt bg2.jpg" alt="">
+                    <div class="slider-info">
+                        <h4>Delivery fee</h4>
+                        <p>Every day is a good day for your restaurant.</p>
+                        <div class="button">
+                            <a href="#" data-toggle="modal" data-target="#myModal">Get More<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="~/ResImages/qt/qt bg3.jpg" alt="">
+                    <div class="slider-info">
+                        <h4>Accepts Cash</h4>
+                        <p>The only thing we love more than food is you!.</p>
+                        <div class="button">
+                            <a href="#" data-toggle="modal" data-target="#myModal">Get More<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- Slideshow 3 Pager -->
+            <ul id="slider3-pager">
+                <li><a href="#"><img src="~/ResImages/qt/qt maliit1.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/ResImages/qt/qt maliit2.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/ResImages/qt/qt maliit3.jpg" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>Our Fantastic Food</h4>
+                    <img src="~/ClientTemp/images/qtfood.jpg" alt="Food" />
+                    <span>QualiTea Time is a strong mik tea shop which aims to provide customers with quality at reasonable and just price.</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- //Modal -->
+    <!-- //header -->
+    <!-- main-content -->
+    <!-- Services -->
+    <div class="welcome agileits" id="services">
+        <div class="container">
+            <div class="welcome-main">
+                <div class="welcome-top">
+                    <h2>Our Best Services</h2>
+                    <p>Craze By Haze Service.</p>
+                </div>
+                <div class="welcome-bottom">
+                    <div class="col-md-4 welcome-grid">
+                        <img src="~/ClientTemp/images/g1.png" alt="" class="img-responsive">
+                        <h4>Service One</h4>
+                        <p>Greeting and seating.</p>
+                    </div>
+                    <div class="col-md-4 welcome-grid">
+                        <img src="~/ClientTemp/images/g2.png" alt="" class="img-responsive">
+                        <h4>Service Two</h4>
+                        <p>Taking food and beverage after meals.</p>
+                    </div>
+                    <div class="col-md-4 welcome-grid">
+                        <img src="~/ClientTemp/images/g3.png" alt="" class="img-responsive">
+                        <h4>Service Three</h4>
+                        <p>Clearing during and after meals.</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---Modal-->
+    <div class="modal fade" id="ViewData">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
+                    <h4 id="products"></h4>
+                    <center>
+                        <img id="imageView" height="345" width="100%" style="border-radius: 20px;" />
+                        <br />
+                        <h4 id="productss"></h4>
+                        <h3 id="prices"></h3>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services -->
+    <!-- Gallery -->
+    <div id="gallery">
+        <div class="container">
+            <center>
+                <div class="port-head">
+                    <h3 class="w3l_head w3l_head1">Our delicious Food</h3>
+                    <p>Click your favorite food.</p>
+                </div>
+            </center>
+
+
+
+            <div class="sap_tabs">
+                <div id="horizontalTab">
+                    <ul class="resp-tabs-list">
+                        <li class="resp-tab-item"><span>All</span></li>
+
+                    </ul>
+                    <div class="clearfix"> </div>
+                    <div class="resp-tabs-container row">
+
+
+
+                        <div class="tab-1 resp-tab-content resp-tab-content-active" style="display:block" aria-labelledby="tab_item-0">
+
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-md-4 portfolio-grids">
+                                    <div class="gallery-grid">
+                                        <img src="~/AppFile/Qt/@item.image" alt=" " height="200px" width="300px" style="border-radius: 20px" onclick="GetId(@item.id)">
+
+                                        <br />
+                                        <br />
+                                    </div>
+                                </div>
+
+                            }
+
+
+                            <div class="clearfix"> </div>
+                        </div>
+
+                        <script>
+                            function GetId(id) {
+                                var url = "/Home/QualiteaGetId?id=" + id;
+
+                                $('#ViewData').modal('show');
+
+                                $.ajax({
+                                    type: "get",
+                                    url: url,
+
+                                    success: function (response) {
+                                        var obj = JSON.parse(response);
+
+                                        $("#products").text("QualiteaTime");
+                                        $("#productss").text(obj.product);
+                                        $("#prices").text(obj.price);
+                                        $("#imageView").attr('src', '@Url.Content("~/AppFile/Qt/")' + obj.image);
+                                    }
+                                })
+                            }
+                        </script>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- //Gallery -->
+    <!-- Special -->
+    <div class="projects" id="special">
+        <div class="container">
+            <div class="port-head">
+                <h3 class="w3l_head w3l_head1">Order Food</h3>
+                <p>Click and Order your favorite food.</p>
+            </div>
+        </div>
+        <div class="projects-grids">
+            <div class="sreen-gallery-cursual">
+                <ul id="flexiselDemo1">
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            <div class="item">
+                                <div class="projects-agile-grid-info">
+                                    <img src="~/AppFile/Qt/@item.image" alt="" height="400px" />
+                                    <div class="projects-grid-caption">
+
+                                        <h4><a class="btn btn-danger" href="@Url.Action("QualiteaOrder","Home",new{id = item.id})"><strong>Order Now</strong></a></h4>
+                                        <p>You don't need a silver fork to eat good food.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    }
+
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <!-- //Special -->
+    <!-- testimonial -->
+    <div class="test" id="clients">
+        <div class="container">
+            <div class="about-w3l">
+                <h3>CUSTOMER FEEDBACK</h3>
+                <p>Sed ut perspiciatis unde.</p>
+            </div>
+            <div class=" test-gr">
+                <div class=" test-gri1">
+                    <div id="owl-demo2" class="owl-carousel">
+                        <div class="agile">
+                            <div class="col-md-6 test-grid">
+                                <div class="test-grid1">
+                                    <img src="~/ClientTemp/images/customer1.jpg" alt="" class="img-r">
+                                    <p>
+                                        It's a great experience. The ambiance is very welcoming and charming. Amazing wines, food and service. Staff are extremely knowledgeable and 
+                                        make great recommendations.
+                                    </p>
+                                    <h4>Artz</h4>
+                                    <span>CUSTOMER 1</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 test-grid">
+                                <div class="test-grid1">
+                                    <img src="~/ClientTemp/images/customer2.jpg" alt="" class="img-r">
+                                    <p>
+                                        This is my absolute favorite restaurant in Cajidiocan. The food is always fantastic and no matter what I order I am always delighted with
+                                        my meal.
+                                    </p>
+                                    <h4>Jay-ar</h4>
+                                    <span>CUSTOMER 2</span>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="agile">
+                            <div class="col-md-6 test-grid">
+                                <div class="test-grid1">
+                                    <img src="~/ClientTemp/images/customer3.jpg" alt="" class="img-r">
+                                    <p>
+                                        I have to say, I enjoyed every single bite of the meal in QualiteaTime. I had 3 course meal, with a couple of drinks. Considering the quality,
+                                        the price is reasonable.
+                                    </p>
+                                    <h4>Lea May</h4>
+                                    <span>CUSTOMER 3</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 test-grid">
+                                <div class="test-grid1">
+                                    <img src="~/ClientTemp/images/customer1.jpg" alt="" class="img-r">
+                                    <p>
+                                        It's a great experience. The ambiance is very welcoming and charming. Amazing wines, food and service. Staff are extremely knowledgeable and
+                                        make great recommendations.
+                                    </p>
+                                    <h4>Artz</h4>
+                                    <span>CUSTOMER 4</span>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="agile">
+                            <div class="col-md-6 test-grid">
+                                <div class="test-grid1">
+                                    <img src="~/ClientTemp/images/customer2.jpg" alt="" class="img-r">
+                                    <p>
+                                        This is my absolute favorite restaurant in Cajidiocan. The food is always fantastic and no matter what I order I am always delighted with
+                                        my meal.
+                                    </p>
+                                    <h4>Jay-ar</h4>
+                                    <span>CUSTOMER 5</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 test-grid">
+                                <div class="test-grid1">
+                                    <img src="~/ClientTemp/images/customer3.jpg" alt="" class="img-r">
+                                    <p>
+                                        I have to say, I enjoyed every single bite of the meal in QualiteaTime. I had 3 course meal, with a couple of drinks. Considering the quality,
+                                        the price is reasonable.
+                                    </p>
+                                    <h4>Lea May</h4>
+                                    <span>CUSTOMER 6</span>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //testimonial -->
+    <!-- Counter -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 stats-grid stats-grid-1 gridw3">
+                    <i class="fa fa-smile-o" aria-hidden="true"></i>
+                    <div class="numscroller" data-slno='1' data-min='0' data-max='158' data-delay='3' data-increment="1">85</div>
+                    <h4>Happy Customers</h4>
+                </div>
+                <div class="col-md-3 col-sm-3 stats-grid stats-grid-2 gridw3">
+                    <i class="fa fa-trophy" aria-hidden="true"></i>
+                    <div class="numscroller" data-slno='1' data-min='0' data-max='63' data-delay='3' data-increment="1">95</div>
+                    <h4>Awards Won</h4>
+                </div>
+                <div class="col-md-3 col-sm-3 stats-grid stats-grid-3 gridw3">
+                    <i class="fa fa-cutlery" aria-hidden="true"></i>
+                    <div class="numscroller" data-slno='1' data-min='0' data-max='421' data-delay='3' data-increment="1">80</div>
+                    <h4>Best Dishes</h4>
+                </div>
+                <div class="col-md-3 col-sm-3 stats-grid stats-grid-4 gridw3">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <div class="numscroller" data-slno='1' data-min='0' data-max='562' data-delay='3' data-increment="1">90</div>
+                    <h4>Our Chefs</h4>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </section>
+    <!-- //Counter -->
+    <!-- Contact -->
+    <!-- Contact-form -->
+    <div class="contact-form" id="contact">
+        <div class="container">
+            <h3>Contact Us</h3>
+            <p>Sed ut perspiciatis unde.</p>
+            <form action="#" method="post">
+                <input type="text" placeholder="Name" name="name" required="">
+                <input type="email" placeholder="Email" name="email" required="">
+                <input type="text" placeholder="Telephone" name="telephone" required="">
+                <textarea placeholder="Message" name="message" required=""></textarea>
+                <button class="btn1">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- //Contact-form -->
+    <div class="agile-contact">
+        <div class="col-md-6 contact-map-right">
+            <div id="map"></div>
+        </div>
+        <div class="col-md-6 left-contact">
+            <div class="cont-top">
+                <h5><i class="fa fa-envelope" aria-hidden="true"></i>Email</h5>
+                <a href="#">foodpasada@gmail.com</a>
+            </div>
+            <div class="con-bot">
+                <div class="left-bw3">
+                    <h5><i class="fa fa-map-marker" aria-hidden="true"></i>Address</h5>
+                    <p>QualiTea Time</p>
+                    <p> Poblacion, Cajidiocan</p>
+                    <p>Sibuyan, Romblon. 5512</p>
+                </div>
+                <div class="right-bw3">
+                    <h5><i class="fa fa-phone" aria-hidden="true"></i>Phone</h5>
+                    <p>+2158 85467</p>
+                    <p>+2158 85467</p>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!--//Contact-->
+    <!--footer-->
+    <div class="w3l-footer">
+        <div class="container">
+            <div class="left-w3">
+                <a href="#">Fantastic Food</a>
+            </div>
+            <div class="right-social">
+                <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+            </div>
+            <div class="clearfix"></div>
+            <div class="footer-nav">
+                <ul>
+                    <li><a class="menu__link scroll" href="#home">Home</a></li>
+                    <li><a class="menu__link scroll" href="#about">Services</a></li>
+                    <li><a class="menu__link scroll" href="#gallery">Gallery</a></li>
+                    <li><a class="menu__link scroll" href="#special">Special</a></li>
+                    <li><a class="menu__link scroll" href="#clients">Clients</a></li>
+                    <li><a class="menu__link scroll" href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="copyright-agile">
+                <p>&copy; 2021 Food Pasada. All rights reserved | Design by <a href="http://w3layouts.com">Artz Rase</a></p>
+            </div>
+        </div>
+    </div>
+    <!--//footer-->
+    <!-- js files -->
+    <!-- For-Banner -->
+    <script src="~/ClientTemp/js/responsiveslides.min.js"></script>
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            $("#slider").responsiveSlides({
+                auto: true,
+                manualControls: '#slider3-pager',
+            });
+        });
+    </script>
+    <!-- //For-Banner -->
+    <!-- For-Gallery-js -->
+    <!-- script for portfolio -->
+    <script type='text/javascript' src='~/ClientTemp/js/jquery.easy-gallery.js'></script>
+    <script type='text/javascript'>
+        //init Gallery
+        $('.portfolio').easyGallery();
+    </script>
+    <script src="~/ClientTemp/js/easyResponsiveTabs.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true   // 100% fit in a container
+            });
+        });
+    </script>
+    <!-- //script for portfolio -->
+    <!-- //For-Gallery-js -->
+    <!-- js for Counter -->
+    <script type="text/javascript" src="~/ClientTemp/js/numscroller-1.0.js"></script>
+    <!-- /js for Counter -->
+    <!-- for-Clients -->
+    <script src="~/ClientTemp/js/owl.carousel.js"></script>
+    <link href="~/ClientTemp/css/owl.carousel.css" rel="stylesheet">
+    <!-- requried-jsfiles-for owl -->
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo2").owlCarousel({
+                items: 1,
+                lazyLoad: false,
+                autoPlay: true,
+                navigation: false,
+                navigationText: false,
+                pagination: true,
+            });
+        });
+    </script>
+    <!-- //requried-jsfiles-for owl -->
+    <!-- //for-Clients -->
+    <!-- Map-JavaScript -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    <script type="text/javascript">
+        google.maps.event.addDomListener(window, 'load', init);
+        function init() {
+            var mapOptions = {
+                zoom: 11,
+                center: new google.maps.LatLng(40.6700, -73.9400),
+                styles: [{ "featureType": "all", "elementType": "labels.text.fill", "stylers": [{ "saturation": 36 }, { "color": "#000000" }, { "lightness": 40 }] }, { "featureType": "all", "elementType": "labels.text.stroke", "stylers": [{ "visibility": "on" }, { "color": "#000000" }, { "lightness": 16 }] }, { "featureType": "all", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative", "elementType": "geometry.fill", "stylers": [{ "color": "#000000" }, { "lightness": 20 }] }, { "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [{ "color": "#000000" }, { "lightness": 17 }, { "weight": 1.2 }] }, { "featureType": "landscape", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 20 }] }, { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 21 }] }, { "featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{ "color": "#000000" }, { "lightness": 17 }] }, { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [{ "color": "#000000" }, { "lightness": 29 }, { "weight": 0.2 }] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 18 }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 16 }] }, { "featureType": "transit", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 19 }] }, { "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 17 }] }]
+            };
+            var mapElement = document.getElementById('map');
+            var map = new google.maps.Map(mapElement, mapOptions);
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(40.6700, -73.9400),
+                map: map,
+            });
+        }
+    </script>
+    <!-- //Map-JavaScript -->
+    <!-- For-Special-Food -->
+    <script type="text/javascript">
+        $(window).load(function () {
+            $("#flexiselDemo1").flexisel({
+                visibleItems: 4,
+                animationSpeed: 1000,
+                autoPlay: true,
+                autoPlaySpeed: 3000,
+                pauseOnHover: true,
+                enableResponsiveBreakpoints: true,
+                responsiveBreakpoints: {
+                    portrait: {
+                        changePoint: 480,
+                        visibleItems: 1
+                    },
+                    landscape: {
+                        changePoint: 640,
+                        visibleItems: 2
+                    },
+                    tablet: {
+                        changePoint: 768,
+                        visibleItems: 3
+                    }
+                }
+            });
+
+        });
+    </script>
+    <script type="text/javascript" src="~/ClientTemp/js/jquery.flexisel.js"></script>
+    <!-- //For-Special-Food -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="~/ClientTemp/js/move-top.js"></script>
+    <script type="text/javascript" src="~/ClientTemp/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!-- for-bottom-to-top smooth scrolling -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <!-- //for-bottom-to-top smooth scrolling -->
+    <!-- //js files -->
+</body>
+</html>

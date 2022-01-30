@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Food Pasada</title>
+  
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#ff6a00;">
+        <div class="container">
+            <div class="navbar-header" style="float: right;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="padding-top:20px;">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("FoodPasada", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white;" })
+            </div>
+            <div class="navbar-collapse collapse" style="z-index: 1;">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("CrazeByHaze", "Index", "Home", null, new { @style="color:white;"})</li>
+                    <li>@Html.ActionLink("QualiteaTime", "QualiteaIndex", "Home", null, new { @style = "color:white;" })</li>
+                    <li>@Html.ActionLink("GnB", "GnBIndex", "Home", null, new { @style = "color:white;" })</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="body-content" style="margin-top:35px;">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -FoodPasa</p>
+        </footer>
+    </div>
+
+
+</body>
+</html>

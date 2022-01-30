@@ -1,0 +1,117 @@
+﻿@model IEnumerable<Food_Pasada.Models.cbh_product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CrazeLayout.cshtml";
+}
+
+<div class="market-updates">
+    <div class="col-md-4 market-update-gd">
+        <div class="market-update-block clr-block-1">
+            <div class="col-md-8 market-update-left">
+                <h3>@ViewBag.count</h3>
+                <h4>Registered Product</h4>
+                <p>Menu Product</p>
+            </div>
+            <div class="col-md-4 market-update-right">
+                <i class="fa fa-file-text-o"> </i>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="col-md-4 market-update-gd">
+        <div class="market-update-block clr-block-2">
+            <div class="col-md-8 market-update-left">
+                <h3>@ViewBag.rider</h3>
+                <h4>Available Riders</h4>
+                <p>Food Pasada Riders</p>
+            </div>
+            <div class="col-md-4 market-update-right">
+                <i class="fa fa-eye"> </i>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="col-md-4 market-update-gd">
+        <div class="market-update-block clr-block-3">
+            <div class="col-md-8 market-update-left">
+                <h3>@ViewBag.count1</h3>
+                <h4>Order Messages</h4>
+                <p>All messages Orders</p>
+            </div>
+            <div class="col-md-4 market-update-right">
+                <i class="fa fa-envelope-o"> </i>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+<!--market updates end here-->
+<!--mainpage chit-chating-->
+<div class="chit-chat-layer1">
+    <div class="col-md-6 chit-chat-layer1-left">
+        <div class="work-progres">
+            <div class="chit-chat-heading">
+                Riders List
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            
+                            <th>Rider</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                           @foreach(var item in ViewBag.riderList)
+                           {
+                               <tr>
+                                   <td>@item.full_name</td>
+                                   <td><b>@item.IsActive</b></td>
+                               </tr>
+                           }
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 chit-chat-layer1-rit">
+        <div class="geo-chart">
+            <section id="charts1" class="charts">
+                <div class="wrapper-flex">
+
+                    <table class="table table-hover">
+                        <caption>PRODUCT LIST</caption>
+                        <thead>
+                            <tr>
+
+                                <th>Product</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.product</td>
+                                    <td><b>@item.price</b></td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+
+
+
+                </div><!-- .wrapper-flex -->
+            </section>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+

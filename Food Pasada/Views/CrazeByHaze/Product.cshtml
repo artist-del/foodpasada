@@ -1,0 +1,321 @@
+﻿@model IEnumerable<Food_Pasada.Models.cbh_product>
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_CrazeLayout.cshtml";
+    var pd = ViewBag.model as Food_Pasada.Models.cbh_product;
+}
+
+<style>
+    
+    table thead tr th{
+        background-color: #f8b20b;
+    }
+    .modal-header{
+        background-color: #f8b20b;
+    }
+    .modal-footer{
+        background-color: #f8b20b;
+    }
+    .modal-header h3{
+        color: #000000;
+    }
+    .btn{
+        background-color: #f8b20b;
+        color: #000000;
+    }
+    #btn_del{
+        background-color: #ff0000;
+        color: #ffffff;
+    }
+    table tr td {
+        text-align: center;
+        font-family: 'Segoe UI';
+        font-size: 20px;
+    }
+
+    table tr th {
+        font-family: 'Segoe Marker';
+        text-align: center;
+        font-size: 20px;
+    }
+</style>
+
+                    <div class="modal fade" id="CreateNew">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h3 class="modal-title center-block"><strong>Add New Product</strong></h3>
+                                </div>
+
+                                <div class="modal-body row">
+                
+                                            <div class="col-md-8">
+                                                <form id="FormData" method="POST" enctype="multipart/form-data" onsubmit="return AjaxPost(this)">
+                                                    <label>Product Name:</label><br />
+                                                    <input type="text" class="form-control" name="product" placeholder="Product Name" />
+                                                    
+                                                    <label>Product Price:</label><br />
+                                                    <input type="text" class="form-control" name="price" placeholder="Price" />
+                                                    
+                                                    <label>Product Image:</label><br />
+                                                    <input type="file" class="form-control" name="ImageUpload" id="upload" onchange="ShowImage(this, document.getElementById('previewImage'))"/>
+                                                    <br />
+                                                    <button class="btn btn-default"><span class="glyphicon glyphicon-save"></span>  Save</button>
+                                                </form>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <img id="previewImage" src="~/cbh_Login/images/images (11).jpeg" class="img-responsive" style="border-radius: 20px"/>
+                                            </div>
+                                </div>
+
+                                <div class="modal-footer">
+                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                      <div class="modal fade" id="EditData">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                      </button>
+                                      <h3 class="modal-title center-block"><strong>Update Product</strong></h3>
+                                  </div>
+
+                                  <div class="modal-body row">
+
+
+                                      <div class="col-md-8">
+                                          <form id="FormData" method="POST" enctype="multipart/form-data" onsubmit="return ajaxPost(this)">
+                                              <input type="hidden" class="form-control" name="id" id="ids" />
+                                              <label>Product:</label><br />
+                                              <input type="text" class="form-control" name="product" placeholder="Product Name" id="product_name" />
+                                              
+                                              <label>Price:</label><br />
+                                              <input type="text" class="form-control" name="price" placeholder="Price" id="price" />
+                                              
+                                              <label>Image:</label>
+                                              <input type="file" class="form-control" name="ImageUpload" id="upload" onchange="ShowImages(this, document.getElementById('previewImages'))" />
+                                              <br />
+                                              <button class="btn btn-default"><span class="glyphicon glyphicon-save-file"></span>  Update</button>
+                                          </form>
+                                      </div>
+                                      <div class="col-md-4">
+                                          <img id="previewImages" src="~/cbh_Login/images/images (11).jpeg" class="imageView img-responsive" style="border-radius: 20px" />
+                                      </div>
+                                  </div>
+
+                                  <div class="modal-footer">
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+
+                      <div class="modal fade" id="DelData">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                      </button>
+                                      <h3 class="modal-title center-block"><strong>Delete</strong></h3>
+                                  </div>
+
+                                  <div class="modal-body row">
+                                      <center>
+                                          <h3><strong>Do you want to Delete?</strong></h3>
+                                      </center>
+                                      
+                                      <input type="hidden" id="id_del" />
+
+                                  </div>
+
+                                  <div class="modal-footer">
+                                      <button class="btn btn-default" id="btn_del"><span class="glyphicon glyphicon-remove-sign"></span>  Delete</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <br />
+            <button class="btn btn-default" data-toggle="modal" data-target="#CreateNew"><span class="glyphicon glyphicon-plus-sign"></span><strong>  Add Product</strong> </button>
+            <br />
+        </div>
+    </div>
+ <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>PRODUCT NAME</th>
+                            <th>PRICE</th>
+                            <th>IMAGE</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.product</td>
+                                <td>@item.price</td>
+                                <td>
+                                    <img src="~/AppFile/Craze/@item.image" alt="@item.product" height="70px" width="70px" style="border-radius:20px; box-shadow: 2px 2px 8px cyan, -2px -2px 8px black"/>
+                                </td>
+                                <td>
+                                    <button class="btn btn-default" onclick="GetProduct(@item.id)"><span class="glyphicon glyphicon-pencil"></span></button>
+                                    <button class="btn btn-default" onclick="GetDel(@item.id)"><span class="glyphicon glyphicon-remove-circle"></span></button>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<link href="~/Content/sweetalert2.css" rel="stylesheet" />
+<script src="~/Scripts/sweetalert2.js"></script>
+<script>
+
+        function AjaxPost(formData) {
+
+            var ajaxConfig = {
+                type: "post",
+                url: "/CrazeByHaze/Create",
+                data: new FormData(formData),
+                success: function (result) {
+                    Swal.fire("Information", result, "success").then((value) => {
+                        window.location.href = "/CrazeByHaze/Product";
+                    });
+                    
+                }
+                }
+
+                if($(formData).attr('enctype') == "multipart/form-data"){
+                    ajaxConfig["contentType"]=false;
+                    ajaxConfig["processData"]=false;
+
+                }
+                $.ajax(ajaxConfig);
+                return false;
+        }
+
+        function ajaxPost(formData) {
+
+            var ajaxConfig = {
+                type: "post",
+                url: "/CrazeByHaze/Update",
+                data: new FormData(formData),
+                success: function (response) {
+                    if (response.status == true) {
+                        Swal.fire("Information", "Data Successfully Update", "success").then((value) => {
+                            window.location.href = "/CrazeByHaze/Product";
+                        });
+                       
+                    }
+                    else {
+                        alert(response.message);
+                        window.location.href = "/CrazeByHaze/Product";
+                    }
+                }
+            }
+
+            if ($(formData).attr('enctype') == "multipart/form-data") {
+                ajaxConfig["contentType"] = false;
+                ajaxConfig["processData"] = false;
+
+            }
+            $.ajax(ajaxConfig);
+            return false;
+    }
+
+       
+
+        function GetProduct(ID){
+            var url = "/CrazeByHaze/GetProduct?id="+ID;
+            $("#EditData").modal('show');
+
+            $.ajax({
+                type: "get",
+                url: url,
+                
+                success: function (response) {
+                    var obj = JSON.parse(response);
+
+                    $("#ids").val(obj.id);
+                    $("#product_name").val(obj.product);
+                    $("#price").val(obj.price);
+                    $(".imageView").attr('src','@Url.Content("~/AppFile/Craze/")'+obj.image);
+                }
+            })
+        }
+
+    function GetDel(id){
+        $("#id_del").val(id);
+        $("#DelData").modal('show');
+    }
+
+    $('#btn_del').click(function () {
+        var data_id = $('#id_del').val();
+
+        $.ajax({
+            type: "post",
+            url: "/CrazeByHaze/Delete",
+            data: { id: data_id },
+            success: function (response) {
+                if (response.status == true) {
+                    Swal.fire("Information", "Information Successfully Deleted", "success").then((value) => {
+                        window.location.href = "/CrazeByHaze/Product";
+                    });
+                    
+                }
+                else {
+                    alert("Error");
+                    window.location.href = "/CrazeByHaze/Product";
+                }
+            }
+        })
+    })
+
+
+
+        function ShowImage(uploader, previewImage) {
+            if (uploader.files && uploader.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $(previewImage).attr('src', e.target.result);
+                }
+                reader.readAsDataURL(uploader.files[0]);
+            }
+        }
+
+        function ShowImages(uploader, previewImages) {
+            if (uploader.files && uploader.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $(previewImages).attr('src', e.target.result);
+                }
+                reader.readAsDataURL(uploader.files[0]);
+            }
+        }
+       
+ 
+</script>

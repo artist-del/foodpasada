@@ -1,0 +1,162 @@
+﻿
+
+@{
+    ViewBag.Title = "Order";
+    Layout = null;
+}
+
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fare Order Form a Responsive Widget Template :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Fare Order Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Custom Theme files -->
+    <!-- font-awesome-icons -->
+    <link href="~/orderForm/css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <link href="~/orderForm/css/style.css" rel='stylesheet' type='text/css' />
+    <!--fonts-->
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Niconne" rel="stylesheet">
+    <!--//fonts-->
+</head>
+<body>
+    <style>
+        .btn1 {
+            text-decoration: none;
+            background-color: #ff6a00;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            display: inline-block;
+        }
+
+            .btn1:hover {
+                transition: .3s all ease;
+                background-color: white;
+                color: black;
+            }
+    </style>
+    <!--background-->
+    <h1> CrazeByHaze Order Form </h1>
+    <center>
+        <a class="btn1" href="@Url.Action("Index","Home")">Home</a>
+    </center>
+    <div class="bg-agile">
+        <img src="~/AppFile/Craze/@ViewBag.image" alt="" height="230px" width="110px" style="padding-right:60px; padding-bottom:30px">
+        <div class="book-appointment">
+            <h2>Make Your Order Here</h2>
+            <div class="book-form agileits-login">
+                <form action="#" method="post" id="OrderForm">
+                    <div class="phone_email">
+                        <label>Full name : </label>
+                        <div class="form-text">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <input type="text" name="f_name" placeholder="" required="">
+                        </div>
+                    </div>
+                    <div class="phone_email phone_email1">
+                        <label>Email : </label>
+                        <div class="form-text">
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <input type="email" name="email" placeholder="" required="">
+                        </div>
+                    </div>
+                    <div class="phone_email">
+                        <label>Phone number : </label>
+                        <div class="form-text">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <input type="text" name="number" placeholder="" required="">
+                        </div>
+                    </div>
+                    <div class="phone_email phone_email1">
+                        <label>Address : </label>
+                        <div class="form-text">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <input type="text" name="address" placeholder="" required="">
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                   
+                    <div class="wthree-text">
+                        <h6>Items</h6>
+                        <ul>
+                            <li>
+                                <label class="anim">
+                                    <span>Product:</span>
+                                    <input type="text" class="checkbox" name="product" value="@ViewBag.product"><br />
+                                    <span>Price:</span>
+                                    <input type="text" class="checkbox" name="price" value="@ViewBag.price">
+                                    <input type="hidden" name="image" value="@ViewBag.image" />
+                                </label>
+                            </li>
+                            
+                        </ul>
+                        <div class="clearfix"> </div>
+                    </div>
+                    
+                </form>
+                <input type="submit" id="order" value="Order Now">
+            </div>
+
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link href="~/Content/sweetalert2.css" rel="stylesheet" />
+    <script src="~/Scripts/sweetalert2.js"></script>
+    <script>
+
+        $("#order").click(function () {
+            var dataForm = $('#OrderForm').serialize();
+
+            $.ajax({
+                type: 'post',
+                url: '/Home/Order',
+                data: dataForm,
+                success: function (response) {
+                    if (response.status == true) {
+                        Swal.fire("info", "Thanks for Order, your order will be on process just wait for a while.", "success").then((value) => {
+                            window.location.href = "/Home/Index";
+                        });
+
+                    }
+
+
+                }
+            })
+        })
+
+
+
+    </script>
+
+    <!--copyright-->
+    <div class="copy w3ls">
+        <p>&copy; 2021. CrazeByHaze Order Form . All Rights Reserved  | Design by <a href="#" target="_blank">Artz Rase</a> </p>
+    </div>
+    <!--//copyright-->
+    <script type="text/javascript" src="~/orderForm/js/jquery-2.1.4.min.js"></script>
+    <!-- Calendar -->
+    <link rel="stylesheet" href="~/orderForm/css/jquery-ui.css" />
+    <script src="~/orderForm/js/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+        });
+    </script>
+    <!-- //Calendar -->
+
+</body>
+</html>
+

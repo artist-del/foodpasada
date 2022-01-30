@@ -1,0 +1,21 @@
+﻿.box{
+    margin-top: 90px;
+
+}
+.box2{
+        box-shadow: 2px 2px 10px black;
+}
+#btn11{
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px black;
+    background-color: #ff6a00;
+    font-weight: bold;
+    width: 100%;
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+}
+.box3{
+    margin-top: 40px;
+}

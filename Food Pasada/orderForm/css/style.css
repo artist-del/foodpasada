@@ -1,0 +1,605 @@
+/*
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+*/
+/*--reset--*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/*--start editing from here--*/
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*--end reset--*/
+body{
+	font-family: 'Roboto', sans-serif;
+	font-size: 100%;
+	background: url(../images/bann2.jpg)no-repeat center top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-attachment:fixed;
+}
+.bg-agile {
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    padding: 2em 4em;
+    background: rgba(255, 255, 255, 0.05);
+}
+.bg-agile img {
+    position: absolute;
+    right: 0;
+    bottom: 0em;
+    width: 23em;
+}
+h1 {
+    font-size: 54px;
+    /* font-weight: 700; */
+    text-transform: capitalize;
+    color: #fff;
+    word-spacing: 11px;
+    letter-spacing: 5px;
+    margin:2em 0 1em;
+    text-align: center;
+    font-family: 'Niconne', cursive;
+}
+.book-appointment h2,.wthree-text h6 {
+    text-align: left;
+    font-size: 30px;
+    color: #bbf94e;
+    text-transform: capitalize;
+    margin-bottom: .4em;
+    font-weight: 400;
+    letter-spacing: 3px;
+    font-family: 'Niconne', cursive;
+}
+.wthree-text h6 {
+	margin-top:.5em!important;
+}
+/*-- reservation --*/
+.book-form input[type="text"],.book-form input[type="email"], select#country, select#country1 {
+      width: 89.5%;
+    color: #fff;
+    font-size: 0.9em;
+    padding: 10px 10px 10px 40px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.28);
+    border: none;
+}
+input#datepicker {
+    width: 94.8%!important;
+}
+select#country, select#country1 {
+	width: 100%!important;
+}
+select#country option, select#country1 option {
+	background:#000;
+}
+.phone_email{
+	float:left;
+}
+.phone_email.phone_email1{
+	float:right;
+}
+.phone_email, .phone_email1 {
+    width: 49.5%;
+    margin-bottom: 1.2em;
+}
+.cuisine {
+    margin-bottom: 2em;
+}
+.book-form .form-text,.book_date,.section_room {
+    position: relative;
+} 
+.span1_of_1 {
+    list-style: none;
+    width: 100%;
+}
+.span1_of_1:nth-child(2) {
+    margin: 1em 0;
+}
+.book-form i {
+    position: absolute;
+    color: #ffffff;
+    font-size: 16px;
+    top: 9px;
+    left: 13px;
+}
+.book-form input[type="submit"] {
+    text-transform: capitalize;
+    background: #ff9900;
+    color: #ffffff;
+    padding: 0.7em 6em;
+    border: none;
+    border: 2px solid #f90;
+    font-weight: 600;
+    font-size: 1em;
+    margin-top: 1em;
+    outline: none;
+    letter-spacing: 1px;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    transition: .5s all;
+	cursor:pointer;
+}
+.book-form input[type="submit"]:hover{
+	background: transparent;
+	color:#fff;
+} 
+.book-form ::-webkit-input-placeholder {
+	color:#999 !important;
+}
+.book-form :-moz-placeholder { /* Firefox 18- */
+	color:#999 !important; 
+}
+.book-form ::-moz-placeholder {  /* Firefox 19+ */
+	color:#999 !important;
+}
+.book-form :-ms-input-placeholder {  
+	color:#999 !important;
+}
+.agile-reservation-grid {
+    background: #f4f4f4;
+    padding: 2em;
+}
+.book-form {
+       margin: 0em 0;
+	   width:100%
+}
+.map_agile iframe {
+      height: 792px;
+    width: 100%;
+    border: none;
+}
+.map-grids h3 {
+    color: #191818;
+    font-weight: 600;
+    font-size: 1.4em;
+    margin-bottom: 0.8em;
+    text-transform: uppercase;
+}
+.agileits-login label {
+    font-weight: 600;
+    position: relative;
+    margin-bottom: 6px;
+	color: rgba(255, 255, 255, 0.66);
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+/*-- checkbox --*/
+.agileits-login label {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.83);
+    letter-spacing: 1px;
+    font-weight: 400;
+    position: relative;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+input.checkbox {
+      background: #000;
+    cursor: pointer;
+    width: 1.2em;
+    height: 1.2em;
+    display: inline-block;
+    margin: 0 5px 0 0;
+    vertical-align: text-bottom;
+}
+input.checkbox:before {
+	content: "";
+	position: absolute;
+	width: 1.2em;
+	height: 1.2em;
+	background: inherit;
+	cursor: pointer;
+}
+input.checkbox:after {
+	content: ""; 
+	position: absolute;
+	top: 0px;
+	left: 0;
+	z-index: 1;
+	width: 1.2em;
+	height: 1.2em;
+	border: 1px solid transparent; 
+	-webkit-transition: .4s ease-in-out;
+	-moz-transition: .4s ease-in-out; 
+	transition: .4s ease-in-out;
+}
+input.checkbox:checked:after {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	height: 1.2em;
+	border-color: #fff;
+	border-top-color: transparent;
+	border-right-color: transparent;
+}
+.anim input.checkbox:checked:after {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	height: .6em;
+	border-color: transparent;
+	border-right-color: transparent;
+	animation: .4s rippling .4s ease;
+	animation-fill-mode: forwards;
+}
+@keyframes rippling {
+	50% {
+		border-left-color: #fff;
+	}
+	100% {
+		border-bottom-color: #fff;
+		border-left-color: #fff;
+	}
+} 
+/*-- //checkbox --*/ 
+/*-- //reservation --*/
+/*--copyright--*/
+.copy.w3ls {
+    margin: 8em 0em;
+    text-align: center;
+}
+.copy p {
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+.copy p a {
+    color: #bbf94c;
+    text-decoration: none;
+}
+.copy p a:hover {
+    color: #fff;
+}
+/*--//copyright--*/
+/*--responsive--*/
+@media(max-width:1680px){
+	input#datepicker {
+		width: 93.8%!important;
+	}
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 87.5%;
+	}
+}
+@media(max-width:1600px){
+	.book-form input[type="text"],.book-form input[type="email"], select#country, select#country1 {
+		width: 87%;
+	}
+	input#datepicker {
+		width: 93.6%!important;
+	}
+	h1 {
+		margin:1em 0 .5em;
+	}
+	.copy.w3ls {
+		margin: 2em 0em;
+	}
+}
+@media(max-width:1440px){
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 86%;
+	}
+	input#datepicker {
+		width: 93%!important;
+	}
+}
+@media(max-width:1366px){
+	.bg-agile {
+		width: 53%;
+	}
+	.bg-agile img {
+		width: 20em;
+	}
+}
+@media(max-width:1280px){
+	.bg-agile {
+		width: 58%;
+	}
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 86.4%;
+	}
+	input#datepicker {
+		width: 93.2%!important;
+	}
+}
+@media(max-width:1080px){
+	.bg-agile {
+		width: 65%;
+		padding: 2em 3em;
+	}
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 85.5%;
+	}
+	input#datepicker {
+		width: 92.8%!important;
+	}
+}
+@media(max-width:1050px){
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 85%;
+	}
+	input#datepicker {
+		width: 92.5%!important;
+	}
+}
+@media(max-width:1024px){
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 84.7%;
+	}
+	input#datepicker {
+		width: 92.4%!important;
+	}
+}
+@media(max-width:991px){
+	input#datepicker {
+		width: 92.2%!important;
+	}
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 84.3%;
+	}
+}
+@media(max-width:900px){
+	.bg-agile {
+		width: 75%;
+	}
+	h1 {
+		font-size: 50px;
+		letter-spacing: 3px;
+	}
+	.book-appointment h2, .wthree-text h6 {
+		font-size: 27px;
+		letter-spacing: 2px;
+	}
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 85%;
+	}
+	input#datepicker {
+		width: 92.5%!important;
+	}
+	.book-form input[type="submit"] {
+		padding: 0.6em 5em;
+	}
+}
+@media(max-width:800px){
+	.bg-agile {
+		padding: 1.5em 2.5em;
+	}
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 82.9%;
+	}
+	input#datepicker {
+		width: 91.5%!important;
+	}
+	.bg-agile img {
+		width: 18em;
+	}
+}
+@media(max-width:768px){
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 82.5%;
+	}
+	input#datepicker {
+		width: 91.4%!important;
+	}
+}
+@media(max-width:767px){
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 82%;
+	}
+	input#datepicker {
+		width: 91.1%!important;
+	}
+}
+@media(max-width:736px){
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 81.4%;
+	}
+	input#datepicker {
+		width: 90.7%!important;
+	}
+	h1 {
+		font-size: 48px;
+	}
+}
+@media(max-width:667px){
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 79.5%;
+	}
+	input#datepicker {
+		width: 89.7%!important;
+	}
+	.bg-agile img {
+		width: 15em;
+	}
+}
+@media(max-width:640px){
+	.bg-agile {
+		width: 79%;
+	}
+	input#datepicker {
+		width: 90%!important;
+	}
+	.bg-agile img {
+		bottom: 2em;
+	}
+	.copy p {
+		font-size: 13.5px;
+		letter-spacing: 1.8px;
+		word-spacing: 1px;
+	}
+}
+@media(max-width:600px){
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 78%;
+	}
+	input#datepicker {
+		width: 89%!important;
+	}
+	.copy p {
+		padding: 0 25px;
+		line-height: 28px;
+	}
+	.copy.w3ls {
+		margin: 1.5em 0em;
+	}
+}
+@media(max-width:568px){
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 76.9%;
+	}
+	input#datepicker {
+		width: 88.5%!important;
+	}
+	.bg-agile img {
+		width: 14em;
+		bottom: 3em;
+	}
+}
+@media(max-width:480px){
+	.phone_email, .phone_email1 {
+		width: 100%;
+	}
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 86.3%;
+	}
+	input#datepicker {
+		width: 86.3%!important;
+	}
+	.bg-agile img {
+		width: 12em;
+	}
+	h1 {
+		font-size: 45px;
+	}
+	.book-appointment h2, .wthree-text h6 {
+		font-size: 24px;
+		letter-spacing: 1.5px;
+	}
+	.agileits-login label {
+		font-size: 13px;
+	}
+	.book-form input[type="submit"] {
+		padding: 0.6em 3em;
+		font-size: 0.92em;
+	}
+	.copy p {
+		padding: 0 30px;
+		font-size: 13px;
+		letter-spacing: 1.5px;
+	}
+	.bg-agile {
+		padding: 1.5em 2em;
+	}
+	.phone_email, .phone_email1 {
+		margin-bottom: 1em;
+	}
+}
+@media(max-width:440px){
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 85.3%;
+	}
+	input#datepicker {
+		width: 85.3%!important;
+	}
+}
+@media(max-width:414px){
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 84%;
+	}
+	input#datepicker {
+		width: 84%!important;
+	}
+	.copy p {
+		padding: 0 25px;
+	}
+	h1 {
+		font-size: 42px;
+		letter-spacing: 2px;
+		word-spacing: 7px;
+		margin: 0.7em 0 .2em;
+	}
+	.bg-agile {
+		padding: 1em 2em;
+	}
+}
+@media(max-width:384px){
+	input#datepicker {
+		width: 82.7%!important;
+	}
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 82.7%;
+	}
+	h1 {
+		font-size: 41px;
+	}
+}
+@media(max-width:375px){
+	.bg-agile {
+		padding: 1em 1.5em;
+	}
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 82.3%;
+	}
+	input#datepicker {
+		width: 82.3%!important;
+	}
+	h1 {
+		word-spacing: 5px;
+	}
+}
+@media(max-width:320px){
+	h1 {
+		word-spacing: 3px;
+		font-size: 35px;
+		letter-spacing: 1.5px;
+	}
+	.book-appointment h2, .wthree-text h6 {
+		font-size: 23px;
+		letter-spacing: 1.2px;
+	}
+	.bg-agile {
+		padding: 1em 1em;
+		width: 85%;
+	}
+	input#datepicker {
+		width: 80.5%!important;
+	}
+	.book-form input[type="text"], .book-form input[type="email"], select#country, select#country1 {
+		width: 80.5%;
+	}
+	.bg-agile img {
+		width: 11em;
+		bottom: 4em;
+	}
+	.copy p {
+		padding: 0 17px;
+		letter-spacing: 1px;
+	}
+}
+/*--//responsive--*/

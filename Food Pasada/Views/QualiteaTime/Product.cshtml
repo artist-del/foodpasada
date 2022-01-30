@@ -1,0 +1,229 @@
+﻿@model IEnumerable<Food_Pasada.Models.qt_product> 
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_QualityLayout.cshtml";
+}
+
+<style>
+    table thead tr th {
+        background-color: #7ed2fc;
+    }
+
+    .modal-header {
+        background-color: #7ed2fc;
+    }
+
+    .modal-footer {
+        background-color: #7ed2fc;
+    }
+
+    .modal-header h3 {
+        color: #000000;
+    }
+
+    .btn {
+        background-color: #7ed2fc;
+        color: #000000;
+    }
+
+    #btn_del {
+        background-color: #ff0000;
+        color: #ffffff;
+    }
+    #previewImage{
+        margin-top: 30px;
+    }
+    #previewImages {
+        margin-top: 30px;
+    }
+    table tr td {
+        text-align: center;
+        font-family:'Segoe UI';
+        font-size: 20px;
+    }
+    table tr th {
+        font-family: 'Segoe Marker';
+        text-align: center;
+        font-size: 20px;
+    }
+    
+</style>
+
+                      <div class="modal fade" id="CreateNew">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                      </button>
+                                      <h3 class="modal-title center-block"><strong>Add New Product</strong></h3>
+                                  </div>
+
+                                  <div class="modal-body row">
+
+                                      <div class="col-md-8">
+                                          <form id="FormData" method="POST" enctype="multipart/form-data" onsubmit="return AjaxPost(this)">
+                                              <label>Product Name:</label><br />
+                                              <input type="text" class="form-control" name="product" placeholder="Product Name" />
+                                              
+                                              <label>Product Price:</label><br />
+                                              <input type="text" class="form-control" name="price" placeholder="Price" />
+                                             
+                                              <label>Product Image:</label><br />
+                                              <input type="file" class="form-control" name="ImageUpload" id="upload" onchange="ShowImage(this, document.getElementById('previewImage'))" />
+                                              <br />
+                                              <button class="btn btn-default"><span class="glyphicon glyphicon-save"></span>  Save</button>
+                                          </form>
+                                      </div>
+                                      <div class="col-md-4">
+                                          <img id="previewImage" src="~/cbh_Login/images/images (11).jpeg" class="img-responsive" style="border-radius: 20px" />
+                                      </div>
+                                  </div>
+
+                                  <div class="modal-footer">
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+
+
+                      <div class="modal fade" id="Update">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                      </button>
+                                      <h3 class="modal-title center-block"><strong>Update Product</strong></h3>
+                                  </div>
+
+                                  <div class="modal-body row">
+                                      <div class="col-md-8">
+                                          <form method="post" enctype="multipart/form-data" onsubmit="return ajaxPost(this)">
+                                              <input id="ids" type="hidden" name="id" />
+                                              <label>Product Name:</label><br />
+                                              <input type="text" class="form-control" name="product" placeholder="Product Name" id="Product" />
+
+                                              <label>Product Price:</label><br />
+                                              <input type="text" class="form-control" name="price" placeholder="Price" id="Price" />
+
+                                              <label>Product Image:</label><br />
+                                              <input type="file" class="form-control" name="ImageUpload" onchange="ShowImages(this, document.getElementById('previewImages'))" />
+                                              <br />
+                                              <button class="btn btn-default"><span class="glyphicon glyphicon-saved"></span>  Save</button>
+                                          </form>
+                                      </div>
+                                      <div class="col-md-4">
+                                          <img id="previewImages" class="imageView img-responsive" style="border-radius: 20px" />
+                                      </div>
+                                  </div>
+
+                                  <div class="modal-footer">
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+
+                      <div class="modal fade" id="Delete">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                      </button>
+                                      <h3 class="modal-title center-block"><strong>Delete</strong></h3>
+                                  </div>
+
+                                  <div class="modal-body row">
+                                      <center>
+                                          <h3><strong>Do you want to Delete?</strong></h3>
+                                      </center>
+                                      
+                                      <input type="hidden" id="ids" name="id" />
+                                  </div>
+
+                                  <div class="modal-footer">
+                                      <button class="btn btn-default" id="btn_del"><span class="glyphicon glyphicon-remove-circle"></span>  Delete</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+
+
+
+    
+    <div class="row">
+        <div class="col-md-4">
+            <br />
+            <button class="btn btn-default" data-toggle="modal" data-target="#CreateNew"><span class="glyphicon glyphicon-plus-sign"></span><strong>  Add Product</strong> </button>
+            <br />
+        </div>
+    </div>
+        <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive" >
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>PRODUCT NAME</th>
+                            <th>PRICE</th>
+                            <th>IMAGE</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.product</td>
+                                <td>@item.price</td>
+                                <td>
+                                    <img src="~/AppFile/Qt/@item.image" alt="@item.product" height="70px" width="70px" style="border-radius:20px; box-shadow: 2px 2px 8px cyan, -2px -2px 8px black" />
+                                </td>
+                                <td>
+                                    <button class="btn btn-default" onclick="GetId(@item.id)"><span class="glyphicon glyphicon-pencil"></span></button>
+                                    <button class="btn btn-default" onclick="Del_id(@item.id)"><span class="glyphicon glyphicon-remove-circle"></span></button>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+        
+    
+
+
+<link href="~/Content/sweetalert2.css" rel="stylesheet" />
+<script src="~/Scripts/sweetalert2.js"></script>
+
+    <script>
+        function GetId(id){
+            var url = "/QualiteaTime/GetId?id=" + id;
+            
+            $('#Update').modal('show');
+
+            $.ajax({
+                type: "get",
+                url: url,
+
+                success: function (response) {
+                    var obj = JSON.parse(response);
+
+                    $("#ids").val(obj.id);
+                    $("#Product").val(obj.product);
+                    $("#Price").val(obj.price);
+                    $(".imageView").attr('src', '@Url.Content("~/AppFile/Qt/")' + obj.image);
+                }
+            })
+        }
+    </script>
+    <script src="~/Scripts/QualiteaJs.js"></script>

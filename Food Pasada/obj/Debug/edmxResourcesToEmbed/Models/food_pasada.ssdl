@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="food_pasadaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cbh_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="f_name" Type="varchar" MaxLength="150" />
+    <Property Name="address" Type="varchar" MaxLength="150" />
+    <Property Name="number" Type="varchar" MaxLength="50" />
+    <Property Name="product" Type="varchar" MaxLength="150" />
+    <Property Name="price" Type="varchar" MaxLength="50" />
+    <Property Name="image" Type="varchar" MaxLength="150" />
+    <Property Name="email" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="cbh_product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product" Type="varchar" MaxLength="150" />
+    <Property Name="price" Type="varchar" MaxLength="50" />
+    <Property Name="image" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="fp_admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="150" />
+    <Property Name="password" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="gnb_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="f_name" Type="varchar" MaxLength="150" />
+    <Property Name="address" Type="varchar" MaxLength="150" />
+    <Property Name="number" Type="varchar" MaxLength="50" />
+    <Property Name="product" Type="varchar" MaxLength="150" />
+    <Property Name="price" Type="varchar" MaxLength="50" />
+    <Property Name="image" Type="varchar" MaxLength="150" />
+    <Property Name="email" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="gnb_product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product" Type="varchar" MaxLength="150" />
+    <Property Name="price" Type="varchar" MaxLength="50" />
+    <Property Name="image" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="qt_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="f_name" Type="varchar" MaxLength="150" />
+    <Property Name="address" Type="varchar" MaxLength="150" />
+    <Property Name="number" Type="varchar" MaxLength="50" />
+    <Property Name="product" Type="varchar" MaxLength="150" />
+    <Property Name="price" Type="varchar" MaxLength="50" />
+    <Property Name="image" Type="varchar" MaxLength="150" />
+    <Property Name="email" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="qt_product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product" Type="varchar" MaxLength="150" />
+    <Property Name="price" Type="varchar" MaxLength="50" />
+    <Property Name="image" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="res_admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="f_name" Type="varchar" MaxLength="150" />
+    <Property Name="address" Type="varchar" MaxLength="150" />
+    <Property Name="rest_name" Type="varchar" MaxLength="150" />
+    <Property Name="username" Type="varchar" MaxLength="150" />
+    <Property Name="password" Type="varchar" MaxLength="150" />
+    <Property Name="phone" Type="varchar" MaxLength="150" />
+    <Property Name="email" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tbl_msg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="message" Type="varchar" MaxLength="250" />
+    <Property Name="name" Type="varchar" MaxLength="150" />
+    <Property Name="date" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_riders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="full_name" Type="varchar" MaxLength="150" />
+    <Property Name="address" Type="varchar" MaxLength="150" />
+    <Property Name="number" Type="varchar" MaxLength="150" />
+    <Property Name="email" Type="varchar" MaxLength="150" />
+    <Property Name="IsActive" Type="varchar" MaxLength="50" />
+    <Property Name="username" Type="varchar" MaxLength="150" />
+    <Property Name="password" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityContainer Name="food_pasadaModelStoreContainer">
+    <EntitySet Name="cbh_order" EntityType="Self.cbh_order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cbh_product" EntityType="Self.cbh_product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fp_admin" EntityType="Self.fp_admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gnb_order" EntityType="Self.gnb_order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gnb_product" EntityType="Self.gnb_product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="qt_order" EntityType="Self.qt_order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="qt_product" EntityType="Self.qt_product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="res_admin" EntityType="Self.res_admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_msg" EntityType="Self.tbl_msg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_riders" EntityType="Self.tbl_riders" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

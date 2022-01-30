@@ -1,0 +1,192 @@
+﻿@model IEnumerable<Food_Pasada.Models.tbl_riders>
+@{
+    ViewBag.Title = "OrderMessage";
+    Layout = "~/Views/Shared/_CrazeLayout.cshtml";
+}
+
+<style>
+    table thead tr th {
+        background-color: #f8b20b;
+    }
+
+    .modal-header {
+        background-color: #f8b20b;
+    }
+
+    .modal-footer {
+        background-color: #f8b20b;
+    }
+
+    .modal-header h3 {
+        color: #000000;
+    }
+
+    .btn {
+        background-color: #f8b20b;
+        color: #000000;
+    }
+
+    #btn_del {
+        background-color: #ff0000;
+        color: #ffffff;
+    }
+
+    table tr td {
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 20px;
+    }
+
+    table tr th {
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    h2 {
+        font-family: Stencil;
+        color: #f8b20b;
+    }
+</style>
+
+
+
+<div class="modal fade" id="DelData">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="modal-title center-block"><strong>Delete</strong></h3>
+            </div>
+
+            <div class="modal-body row">
+                <center>
+                    <h2 style="color: #fe261f">Do you want to Delete?</h2>
+                </center>
+
+                <input type="hidden" id="id_del" />
+
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-default" id="btn_del"><span class="glyphicon glyphicon-remove-sign"></span>  Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------Update-->
+<div class="modal fade" id="Update">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="modalClose" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="modal-title center-block"><b>Update Info</b></h3>
+            </div>
+            <div class="modal-body">
+
+                <form id="FormData" method="POST">
+                   
+                    <label>Full Name:</label><br />
+                    <input type="text" class="form-control" name="name" placeholder="Full Name" id="fName" required />
+
+                    <label>Message:</label><br />
+                    <textarea id="TextArea1" name="message" rows="2" cols="20" class="form-control"></textarea>
+
+                    <label>Time:</label><br />
+                    <input type="time" name="date" class="form-control" id="date"/>
+                    </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-default" id="btn_send"><span class="glyphicon glyphicon-send"></span>  Send</a>
+                <a href="#" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<h2>Riders</h2><br />
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>NAME</th>
+                        <th>ADDRESS</th>
+                        <th>NUMBER</th>
+                        <th>EMAIL</th>
+                        <th>STATUS</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                   @foreach(var item in Model)
+                   {
+                       <tr>
+                           <td>@item.full_name</td>
+                           <td>@item.address</td>
+                           <td>@item.number</td>
+                           <td>@item.email</td>
+                           <td><b>@item.IsActive</b></td>
+                           <td>
+                               <button class="btn btn-default" onclick="GetUserId(@item.id)"><span class="glyphicon glyphicon-envelope"></span> Message</button>
+                           </td>
+                       </tr>
+                   }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<link href="~/Content/sweetalert2.css" rel="stylesheet" />
+<script src="~/Scripts/sweetalert2.js"></script>
+
+<script>
+    function GetUserId(ID) {
+        var url = "/CrazeByHaze/GetRiders?id=" + ID;
+        $("#Update").modal('show');
+
+        $.ajax({
+            type: "GET",
+            url: url,
+
+            success: function (response) {
+                var obj = JSON.parse(response);
+
+                $('#fName').val(obj.full_name);
+               
+            }
+        })
+    }
+
+    $(document).ready(function () {
+        $("#btn_send").click(function () {
+            var DataForm = $("#FormData").serialize();
+
+            $.ajax({
+                type: "post",
+                url: "/CrazeByHaze/SaveMessage",
+                data: DataForm,
+
+                success: function () {
+                    Swal.fire("information", "Message Sent", "success").then((value) => {
+                        window.location.href = "/CrazeByHaze/OrderMessage";
+                    });
+                    
+                }
+
+            })
+        })
+    })
+</script>

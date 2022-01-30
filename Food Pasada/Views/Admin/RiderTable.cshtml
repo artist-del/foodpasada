@@ -1,0 +1,231 @@
+﻿@model IEnumerable<Food_Pasada.Models.tbl_riders>
+@{
+    ViewBag.Title = "RiderTable";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .container {
+        height: 60vh;
+    }
+
+    .modal-header {
+        background-color: #fa8e0a;
+    }
+
+    .modal-footer {
+        background-color: #fa8e0a;
+    }
+
+    .modal-header h3 {
+        color: #000000;
+    }
+
+    table thead tr th {
+        background-color: #fa8e0a;
+        color: #ffffff;
+        font-family: 'Segoe UI';
+    }
+
+    table tbody tr td {
+        font-family: 'Segoe UI';
+    }
+
+    table th td {
+        border-collapse: collapse;
+    }
+</style>
+
+
+<div class="modal fade" id="Create">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="modalClose" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="modal-title center-block"><b>Add New</b></h3>
+            </div>
+            <div class="modal-body">
+                <form id="FormData" method="POST">
+                    <label>Full Name:</label><br />
+                    <input type="text" class="form-control" name="full_name" placeholder="Full Name" required /><br />
+
+                    <label>Address:</label><br />
+                    <input type="text" class="form-control" name="address" placeholder="Address" required /><br />
+
+                    <label>Contact Number:</label><br />
+                    <input type="text" class="form-control" name="number" placeholder="Contact Number" required /><br />
+
+                    <label>Email:</label><br />
+                    <input type="text" class="form-control" name="email" placeholder="Email Address" required /><br />
+
+                    <label>Status:</label><br />
+                    <input type="checkbox" value="Active" name="IsActive"/><strong>Active</strong>
+                    <input type="checkbox" value="Not Active" name="IsActive"/><strong>Not Active</strong><br /><br />
+
+                    <label>Username:</label><br />
+                    <input type="text" class="form-control" name="username" placeholder="Username" required /><br />
+
+                    <label>Password:</label><br />
+                    <input type="text" class="form-control" name="password" placeholder="Password" required /><br />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-default" id="btn_add"><span class="glyphicon glyphicon-saved"></span> Save</a>
+                <a href="#" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-------Update-->
+<div class="modal fade" id="Update">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="modalClose" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="modal-title center-block"><b>Update Info</b></h3>
+            </div>
+            <div class="modal-body">
+
+                <form id="FormDataUpdate" method="POST">
+                    <input type="hidden" id="ids" name="id" />
+                    <label>Full Name:</label><br />
+                    <input type="text" class="form-control" id="fName" name="full_name" placeholder="Full Name" required /><br />
+
+                    <label>Address:</label><br />
+                    <input type="text" class="form-control" id="Address" name="address" placeholder="Address" required /><br />
+
+                    <label>Contact Number:</label><br />
+                    <input type="text" class="form-control" id="number" name="number" placeholder="Contact Number" required /><br />
+
+                    <label>Email:</label><br />
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email Address" required /><br />
+
+                    <label>Status:</label><br />
+                    <input type="checkbox" value="Active" id="active" name="IsActive" checked /><strong>Active</strong>
+                    <input type="checkbox" value="Not Active" id="notActive" name="IsActive" /><strong>Not Active</strong><br /><br />
+
+                    <label>Username:</label><br />
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" required /><br />
+
+                    <label>Password:</label><br />
+                    <input type="text" class="form-control" id="password" name="password" placeholder="Password" required /><br />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-default" id="btn_update"><span class="glyphicon glyphicon-floppy-saved"></span> Update</a>
+                <a href="#" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-------Delete-->
+<div class="modal fade" id="Delete">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="modalClose" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="modal-title center-block"><b>WARNING!!!</b></h3>
+            </div>
+            <div class="modal-body">
+                <center><h3><b>Do you want to Delete?</b></h3></center>
+                
+                <input type="hidden" name="id" id="id_del" />
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-default" id="btn_del"><span class="glyphicon glyphicon-remove"></span>Delete</a>
+                <a href="#" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-eject"></span>Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------Delete-->
+<div class="modal fade" id="Delete">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="modalClose" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="modal-title center-block"><b>WARNING!!!</b></h3>
+            </div>
+            <div class="modal-body">
+                <center>
+                    <h3><b>Do you want to Delete?</b></h3>
+                </center>
+                
+                <input type="hidden" name="id" id="id_del" />
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-default" id="btn_del"><span class="glyphicon glyphicon-remove"></span>Delete</a>
+                <a href="#" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-eject"></span>Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <br />
+            <a href="#" class="btn btn-default" data-toggle="modal" data-target="#Create"><span class="glyphicon glyphicon-plus-sign"></span><b>  Add new Owner</b></a>
+            <br />
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>FULL NAME</th>
+                            <th>ADDRESS</th>
+                            <th>NUMBER</th>
+                            <th>EMAIL</th>
+                            <th>STATUS</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.full_name</td>
+                                <td>@item.address</td>
+                                <td>@item.number</td>
+                                <td>@item.email</td>
+                                <td><b>@item.IsActive</b></td>
+                                <td>
+                                    <button class="btn btn-default" onclick="GetUserId(@item.id)"><span class="glyphicon glyphicon-pencil"></span></button>
+                                    <button class="btn btn-default" onclick="GetId(@item.id)"><span class="glyphicon glyphicon-remove"></span></button>
+                                </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+<link href="~/Content/sweetalert2.css" rel="stylesheet" />
+<script src="~/Scripts/sweetalert2.js"></script>
+<script src="~/Scripts/riders.js"></script>

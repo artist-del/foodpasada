@@ -1,0 +1,132 @@
+﻿@model IEnumerable<Food_Pasada.Models.tbl_msg>
+@{
+    Layout = null;
+}
+
+
+
+
+<!--
+    Author: W3layouts
+    Author URL: http://w3layouts.com
+    License: Creative Commons Attribution 3.0 Unported
+    License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Messages</title>
+    <!-- Meta tag Keywords -->
+    <meta http-equiv="refresh" content="60" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Trendy Mobile Screens Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+    <script type="application/x-javascript">
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Meta tag Keywords -->
+    <!-- css files -->
+    <link href="~/Riders/css/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="~/Riders/css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+    <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Ropa+Sans:400,400i&amp;subset=latin-ext" rel="stylesheet">
+    <link href="~/Content/rider.css" rel="stylesheet" />
+
+   
+    <!--//online-fonts -->
+</head>
+
+<body>
+    <style>
+        .msg-box{
+            height: 400px;
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            text-align: justify;
+            background-color: white;
+        }
+        .msg-box ul li{
+            box-shadow: 1px 1px 5px black;
+            padding: 10px;
+        }
+        .btn{
+            border-radius: 20px;
+            box-shadow: 1px 1px 5px black;
+            background-color: #ff6a00;
+            font-weight: bold;
+            width: 100%;
+            height: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+            color: white;
+        }
+        #btn{
+            height: 30px;
+            width: 80px;
+            border-radius: 20px;
+        }
+    </style>
+
+   
+
+
+    <div class="header">
+
+    </div>
+    <div class="w3-main box3">
+        <!-- Main -->
+        <div class="about-bottom main-agile book-form box2">
+            <div class="header-top">
+                <ul>
+                    <li><span></span></li>
+                    <li><span class="chrg"></span> </li>
+                    <li>@ViewBag.time</li>
+                </ul>
+            </div>
+            <div class="form-w3l msgbox">
+               <div class="msg-box">
+                   <ul>
+                       @foreach (var item in Model)
+                       {
+                        <li><strong>@item.date</strong><br />@item.message<br /><br /><button class="btn" onclick="GetDel(@item.id)">Delete</button></li>
+                        <br />
+                        <br />
+                       }
+                       
+                   </ul>
+               </div>
+                <a href="@Url.Action("Index","Riders")"><button id="btn">Back</button></a>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link href="~/Content/sweetalert2.css" rel="stylesheet" />
+    <script src="~/Scripts/sweetalert2.js"></script>
+
+    <script>
+        function GetDel(id) {
+          
+            $.ajax({
+                type: "post",
+                url: "/Riders/DeleteMsg",
+                data: { id: id },
+                success: function () {
+                    Swal.fire("Information", "Message Delete", "success").then((value) => {
+                        window.location.href = "/Riders/Message";
+                    });
+
+                }
+            })
+        }
+
+        
+    </script>
+    <!-- //Main -->
+    <!-- footer -->
+    <!-- //footer -->
+</body>
+</html>
